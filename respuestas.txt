@@ -177,3 +177,44 @@
     => true
     >> x.to_s == ’sym’
     => true
+
+48- El resultado que da es:
+    >> s = "Ruby"
+    => "Ruby"
+    >> t = s
+    => "Ruby"
+    >> t[-1] = ""
+    => ""
+    >> print s
+    Rub=> nil
+    >> t = "Java"
+    => "Java"
+    >> print s, t
+    RubJava=> nil
+
+49- El resultado que da es:
+    >> "%d %s" % [3, "rubies"]
+    =>    “3 rubies”
+
+50- El resultado de las operaciones es:
+    >> x, y = 4, 5
+    =>        [4, 5]
+    >> z = x > y ? x : y
+    =>        5
+    >> x,y,z = [1,2,3]
+    =>        [1, 2, 3]
+
+51- Hace la operación que nosotros queramos con esos valores, como por ejemplo la siguiente resta:
+
+    >> def test
+    >> yield(4,5)
+    >> end
+    => nil
+    >> test {|a,b| puts "Resultado de la suma: #{a-b}"}
+    Resultado de la suma: 9
+    => nil
+
+52- Retorna:
+    => ["hello", "world", "hello", "LPP"]
+
+53- En la primera sentencia se crea una tabla hash con tres elementos, y en la siguiente sentecia los muestra en orden segun las claves 
