@@ -1,0 +1,179 @@
+21- Con "\t\n" nos imprime el tabulador el salto de carro y con '\t\n' le quita el significado para que se impriman como literales
+
+22- %q funciona igual que ' '
+
+23- %Q funciona igual que " "
+
+24- En c tenemos: c = "--4--\n--2--\n"
+
+25- En c tenemos: c = "--\#{a}--\n--\#{b}--\n"
+
+26- s[0,2] => “he”
+    s[-1,1] => “o”
+    s[0,10] => “hello” 
+
+27- En g tenemos: g = "hello world"
+
+28- Queda e = "..."
+
+29- El resultado es "222"
+
+30- El resultado que nos da es ["this", "is", "a", "test"], nos divide el string en una array
+
+31- De resultado nos da ["\\t", "\\n"] nos lo divide en una array escapando el salto de carro y el tabulador
+
+32- De resultado nos da ["\t", "\n"] nos lo divide en una array sin escapar el salto de carro y el tabulador
+
+33- nils tendrá nils = [nil, nil, nil] 
+
+34- zeros tendrá zeros = [0, 0, 0]
+
+35- En b queda [[1, 2], [3, 4]]
+
+36- En c queda [0, 2, 4]
+
+37- El resultado de las operaciones es:
+    >> a[1,1]
+    => [“b”]
+    >> a[-2,2]
+    =>        ["d", "e"]
+    >> a[0..2]
+    =>        ["a", "b", "c"]    
+    >> a[0...1]
+    =>        ["a"]
+    >> a[-2..-1]
+    =>        ["d", "e"]
+
+38- El resultado de las operaciones es:
+    >> a
+    => ["a", "b", "c", "d", "e"]
+    >> a[0,2] = %w{A B}
+    => ["A", "B"]
+    >> a
+    =>                ["A", "B", "c", "d", "e"]
+    >> a[2..5] = %w{C D E}
+    => ["C", "D", "E"]
+    >> a
+    =>                ["A", "B", "C", "D", "E"]
+    >> a[0,0] = [1,2,3]
+    => [1, 2, 3]
+    >> a
+    =>                [1, 2, 3, 3, "A", "B", "C", "D", "E"]
+    >> a[0,2] = []
+    => []
+    >> a
+    =>                [3, 3, "A", "B", "C", "D", "E"]
+    >> a[-1,1] = [ ’Z’ ]
+    => ["Z"]
+    >> a
+    =>                ["a", "b", "c", "d", "Z"]
+    >> a[-2,2] = nil
+    => nil
+    >> a
+    =>                ["a", "b", "c"]
+
+39- El resultado de las operaciones es:
+    >> a = (1...4).to_a
+    =>            [1, 2, 3, 4]
+    >> a = a + [4, 5]
+    =>            [1, 2, 3, 4, 4, 5]
+    >> a += [[6, 7, 8]]
+    =>            [1, 2, 3, 4, 4, 5, [6, 7, 8]]
+    >> a = a + 9
+    TypeError: can't convert Fixnum into Array
+ 
+40- El resultado de las operaciones es:
+    >> x = %w{a b c b a}
+    =>            ["a", "b", "c", "b", "a"]
+    >> x = x - %w{b c d}
+    =>            ["a", "a"]
+
+41- El resultado es [0, 0, 0, 0, 0, 0, 0, 0]
+
+42- El resultado de las operaciones es:
+    >> a = []
+    => []
+    >> a << 1
+    =>            [1]
+    >> a << 2 << 3
+    =>            [1, 2, 3]
+    >> a << [4, 5, 6]
+    =>            [1, 2, 3, [4, 5, 6]]
+    >> a.concat [7, 8]
+    =>            [1, 2, 3, [4, 5, 6], 7, 8]
+
+43- El resultado de las operaciones es:
+    >> a = [1, 1, 2, 2, 3, 3, 4]
+    => [1, 1, 2, 2, 3, 3, 4]
+    >> b = [5, 5, 4, 4, 3, 3, 2]
+    => [5, 5, 4, 4, 3, 3, 2]
+    >> c = a | b
+    =>        [1, 2, 3, 4, 5]
+    >> d = b | a
+    =>        [5, 4, 3, 2, 1]
+    >> e = a & b
+    =>        [2, 3, 4]
+    >> f = b & a
+    =>        [4, 3, 2]
+
+44- El resultado de las operaciones es:
+    >> a = 1..10
+    => 1..10
+    >> a.class
+    => Range
+    >> a.to_a
+    =>        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    >> b = 1...10
+    => 1....10
+    >> b.to_a
+    =>        [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    >> b.include? 10
+    =>        false
+    >> b.include? 8
+    =>        true
+    >> b.step(2) {|x| print "#{x} " }
+    =>        1 3 5 7 9 => 1...10
+    >> 1..3.to_a
+
+45- El resultado de las operaciones es:
+    >> r = 0...100
+    => 0....100
+    >> r.member? 50
+    =>        true
+    >> r.include? 99.9
+    =>        true
+    >> r.member? 99.9
+    =>        true  
+
+46- El resultado de las operaciones es:
+    >> true.class
+    =>        TrueClass
+    >> false.class
+    =>        FalseClass        
+    >> puts "hello" if 0
+    hello
+    => nil
+    >> puts "hello" if nil
+    => nil
+    >> puts "hello" if ""
+    (irb):49: warning: string literal in condition
+    hello
+    => nil
+
+47- El resultado de las operaciones es:
+    >> x = :sym
+    => :sym
+    >> x.class
+    =>Symbol
+    >> x == ’sym’
+    =>false
+    >> x == :sym
+    =>true
+    >> z = :’a long symbol’
+    => :”a long symbol”
+    >> z.class
+    => Symbol
+    >> x == ’sym’.to_sym
+    => true
+    >> x.to_s == ’sym’
+    => true
